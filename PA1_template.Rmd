@@ -7,11 +7,36 @@ output: html_document
 
 ## Loading and preprocessing the data
 
+```{r, echo=FALSE}
+#steps: Number of steps taking in a 5-minute interval (missing values are coded as NA)
+#date: The date on which the measurement was taken in YYYY-MM-DD format
+#interval: Identifier for the 5-minute interval in which measurement was taken
+```
+After loading the data, using the 'summary' function it is posible to see that there are 2304 missing values (NAs) in the data set. To ignore the NAs a new data set without NAs was created.
+```{r, echo=TRUE}
+datact=read.csv("activity.csv")
+str(datact)
+summary(datact)
+ndatact=datact[!is.na(datact[,1]),]
+nasday=tapply(ndatact[,1],ndatact[,2],function(x)sum(is.na(x)))
+```
 
 
 ## What is mean total number of steps taken per day?
 
+What is mean total number of steps taken per day?
 
+For this part of the assignment, you can ignore the missing values in the dataset.
+
+Make a histogram of the total number of steps taken each day
+
+Calculate and report the mean and median total number of steps taken per day
+
+```{r, echo=TRUE}
+stepday=tapply(datact[,1],datact[,2],sum,na.rm=TRUE)
+hist(stepday,breaks=12)
+mean(stepday)
+```
 
 ## What is the average daily activity pattern?
 
