@@ -1,2 +1,6 @@
-RResearch_PAssessment1
+Reproducible Research: Peer Assessment 1
 ======================
+
+---
+Starting
+---
