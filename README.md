@@ -2,5 +2,5 @@ Reproducible Research: Peer Assessment 1
 ======================
 
 ---
-Starting
+After one week of learnig this is the result
 ---
